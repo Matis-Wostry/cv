@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wostry Matis - Développeur Web Full-Stack | CV</title>
+    <title>Wostry Matis | CV</title>
 
     <!-- Open Graph -->
     <meta property="og:title" content="Wostry Matis - Développeur Web Full-Stack">
@@ -20,6 +20,9 @@
 
     <!-- Scripts -->
     <script src="/script/script.js" defer></script>
+
+    <!-- html2pdf.js pour générer le PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 
@@ -51,7 +54,7 @@
             <p class="subtitle">Développeur Web Full-Stack & Étudiant CREA</p>
             <p class="baseline">En recherche d'alternance de 2 ans à Genève </br>(développement web full-stack)</p>
             <div class="hero-cta">
-                <button class="btn btn-primary" onclick="window.print()">📄 Télécharger le CV (PDF)</button>
+                <button class="btn btn-primary" id="downloadPdfBtn">📄 Télécharger le CV (PDF)</button>
                 <a href="#contact" class="btn btn-ghost">📧 Me contacter</a>
             </div>
         </section>
@@ -137,7 +140,7 @@
         </section>
 
         <!-- Projets -->
-        <section id="projects">
+        <section id="projects" class="visible">
             <h2>Projets</h2>
             <div class="projects-list">
                 <article class="project-item">
@@ -158,7 +161,7 @@
         </section>
 
         <!-- Compétences techniques -->
-        <section id="skills">
+        <section id="skills" class="visible">
             <h2>Compétences techniques</h2>
             <div class="skills-grid">
                 <div class="skill-category">
@@ -218,7 +221,7 @@
         </section>
 
         <!-- Savoir-être -->
-        <section id="soft-skills">
+        <section id="soft-skills" class="visible">
             <h2>Savoir-être</h2>
             <div class="soft-skills">
                 <ul>
@@ -234,7 +237,7 @@
         </section>
 
         <!-- Formation -->
-        <section id="education">
+        <section id="education" class="visible">
             <h2>Formation</h2>
             <div class="education-item">
                 <div class="education-header">
@@ -258,7 +261,7 @@
         </section>
 
         <!-- En recherche -->
-        <section id="availability">
+        <section id="availability" class="visible">
             <h2>En recherche</h2>
             <div class="availability-card">
                 <h3>Alternance Développeur Full-Stack</h3>
@@ -280,7 +283,7 @@
         </section>
 
         <!-- Loisirs -->
-        <section id="interests">
+        <section id="interests" class="visible">
             <h2>Loisirs & centres d'intérêt</h2>
             <ul class="interests-list">
                 <li>🏀 Basket-Ball</li>
@@ -291,7 +294,7 @@
         </section>
 
         <!-- Contact -->
-        <section id="contact">
+        <section id="contact" class="visible">
             <h2>Contact</h2>
             <div class="contact-grid">
                 <div class="contact-info">
