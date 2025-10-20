@@ -19,6 +19,320 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <div class="nav-logo">WM</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#experience">Expériences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Changer le thème">☀️</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero visible">
+            <h1>WOSTRY <span class="accent">MATIS</span></h1>
+            <p class="subtitle">Développeur Web Full-Stack & Étudiant CREA</p>
+            <p class="baseline">En recherche d'alternance de 2 ans à Genève (développement web full-stack)</p>
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="window.print()">📄 Télécharger le CV (PDF)</button>
+                <a href="#contact" class="btn btn-ghost">📧 Me contacter</a>
+            </div>
+        </section>
+
+        <!-- À propos -->
+        <section id="about">
+            <h2>À propos</h2>
+            <p>Mettre un texte de présentation 'recherche / point fort, etc)</p>
+        </section>
+
+        <!-- Expériences -->
+        <section id="experience">
+            <h2>Expériences professionnelles</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <p class="timeline-title">Stage intégrateur Wordpress</p>
+                            <p class="timeline-company">Smart Informatique</p>
+                        </div>
+                        <p class="timeline-date">2024</p>
+                    </div>
+                    <div class="timeline-description">
+                        <p>Stage de 8 semaines</p>
+                        <ul>
+                            <li>Création de site Internet avec le CMS Wordpress</li>
+                            <li>Rajouter des points</li>
+                        </ul>
+                    </div>
+                    <div class="tech-badges">
+                        <ul>
+                            <li class="badge">WordPress</li>
+                            <li class="badge">CMS</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <p class="timeline-title">Alternance développeur Web</p>
+                            <p class="timeline-company">Le MieuxDisant</p>
+                        </div>
+                        <p class="timeline-date"> Aout 2024 - Septembre 2025</p>
+                    </div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Refonte de site Internet avec le CMS Wordpress</li>
+                            <li>Création de maquette avec Figma</li>
+                            <li>Production et gestion de contenus optimisés pour le SEO</li>
+                            <li>Optimisation de sites internet et reporting des résultats pour piloter les stratégies digitales</li>
+                        </ul>
+                    </div>
+                    <div class="tech-badges">
+                        <ul>
+                            <li class="badge">SEO</li>
+                            <li class="badge">WordPress</li>
+                            <li class="badge">Figma</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <p class="timeline-title">Freelance</p>
+                            <p class="timeline-company">Projet personnel</p>
+                        </div>
+                        <p class="timeline-date">2025 - Aujourd'hui</p>
+                    </div>
+                    <div class="timeline-description">
+                        <p>Développement en freelance avec spécialisation en optimisation et création de sites performants.</p>
+                    </div>
+                    <div class="tech-badges">
+                        <ul>
+                            <li class="badge">Full-Stack</li>
+                            <li class="badge">Freelance</li>
+                            <li class="badge">Web Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projets -->
+        <section id="projects">
+            <h2>Projets</h2>
+            <div class="projects-list">
+                <article class="project-item">
+                    <h3 class="project-title">Plateforme E-commerce Full-Stack</h3>
+                    <p class="project-description">Développement d'une application e-commerce complète avec gestion de catalogue, panier, paiement et administration. Intégration d'APIs tierces et optimisation des performances.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/wostry" target="_blank">→ Voir le code</a>
+                        <a href="#" target="_blank">→ Demo en ligne</a>
+                    </div>
+                    <div class="tech-badges">
+                        <ul>
+                            <li class="badge">React</li>
+                            <li class="badge">Node.js</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Compétences techniques -->
+        <section id="skills">
+            <h2>Compétences techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Langages & Frameworks</h3>
+                    <ul class="skill-list">
+                        <li>HTML, CSS, JavaScript, PHP, SQL, Python</li>
+                        <li>React, Vue.js, Next.js, Node.js</li>
+                        <li>WordPress, Laravel, Express.js</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Développement & API</h3>
+                    <ul class="skill-list">
+                        <li>REST API, GraphQL</li>
+                        <li>Création et gestion d'APIs</li>
+                        <li>Développement Full-Stack</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Hébergement & Serveurs</h3>
+                    <ul class="skill-list">
+                        <li>Gestion de serveurs</li>
+                        <li>Bases de données (MySQL, MongoDB)</li>
+                        <li>Déploiement et DevOps</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Outils SEO & Analyse</h3>
+                    <ul class="skill-list">
+                        <li>Google Analytics, Search Console, SEMrush</li>
+                        <li>Optimisation SEO technique</li>
+                        <li>Versioning & Collaboration (Git, GitHub, Figma)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Design & Visualisation</h3>
+                    <ul class="skill-list">
+                        <li>Figma, Photoshop, Illustrator, Canva</li>
+                        <li>Design responsive et accessible</li>
+                        <li>UI/UX Design</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>CMS & Outils Web</h3>
+                    <ul class="skill-list">
+                        <li>WordPress, Joomla, Elementor</li>
+                        <li>WooCommerce pour e-commerce</li>
+                        <li>Mailchimp, diverses intégrations</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Savoir-être -->
+        <section id="soft-skills">
+            <h2>Savoir-être</h2>
+            <div class="soft-skills">
+                <ul>
+                    <li class="soft-skill">Autonomie</li>
+                    <li class="soft-skill">Adaptabilité</li>
+                    <li class="soft-skill ">Curieux</li>
+                    <li class="soft-skill">Esprit d'analyse</li>
+                    <li class="soft-skill">Patient</li>
+                    <li class="soft-skill">Rigoureux</li>
+                    <li class="soft-skill">Travail d'équipe</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Formation -->
+        <section id="education">
+            <h2>Formation</h2>
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <p class="education-degree">Bachelor Développeur Web et Applications</p>
+                        <p class="education-school">CREA Genève - École de Design et d'Innovation</p>
+                    </div>
+                    <p class="education-date">2025 - aujourd'hui</p>
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <p class="education-degree">CFC Informaticien - Orientation Multimédia</p>
+                        <p class="education-school">CFPT EMM (École des Métiers du Multimédia et de l'Internet)</p>
+                    </div>
+                    <p class="education-date">2023 - 2025</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- En recherche -->
+        <section id="availability">
+            <h2>En recherche</h2>
+            <div class="availability-card">
+                <h3>Alternance Développeur Full-Stack</h3>
+                <div class="availability-info">
+                    <div class="availability-item">
+                        <p><strong>Type de contrat</strong></p>
+                        <p>Alternance 2 ans</p>
+                    </div>
+                    <div class="availability-item">
+                        <p><strong>Localisation</strong></p>
+                        <p>Genève, Suisse</p>
+                    </div>
+                    <div class="availability-item">
+                        <p><strong>Disponibilité</strong></p>
+                        <p>Immédiate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loisirs -->
+        <section id="interests">
+            <h2>Loisirs & centres d'intérêt</h2>
+            <ul class="interests-list">
+                <li>🏀 Basket-Ball</li>
+                <li>🎮 Jeux vidéos</li>
+                <li>🎬 Mangas / Animés</li>
+                <li>🎵 Musique (Rap, Electro, etc.)</li>
+            </ul>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Restons en contact</h3>
+                    <ul class="contact-links">
+                        <li>
+                            📧 <a href="mailto:matiswostry.pro@gmail.com">matiswostry.pro@gmail.com</a>
+                        </li>
+                        <li>
+                            📱 <a href="tel:+41634896232">06 34 89 62 32</a>
+                        </li>
+                        <li>
+                            💼 <a href="https://linkedin.com/in/matis-wostry" target="_blank">LinkedIn</a>
+                        </li>
+                        <li>
+                            🐙 <a href="https://github.com/wostry" target="_blank">GitHub</a>
+                        </li>
+                        <li>
+                            🌐 <a href="https://matis-wostry.com" target="_blank">Portfolio</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Envoyez-moi un message</h3>
+                    <div id="formStatus" class="form-status"></div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Wostry Matis. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
