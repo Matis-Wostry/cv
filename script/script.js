@@ -138,7 +138,7 @@ setActiveLink();
 // CONTACT FORM HANDLING
 // INSTRUCTIONS: Remplacez CONTACT_ENDPOINT par votre URL Formspree/FormSubmit
 // ============================================
-const CONTACT_ENDPOINT = 'https://formspree.io/f/xanpzqln'; // <-- Remplacez YOUR_FORM_ID
+const CONTACT_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; // <-- Remplacez YOUR_FORM_ID
 // Ou utilisez FormSubmit: 'https://formsubmit.co/your@email.com'
 
 const contactForm = document.getElementById('contactForm');
