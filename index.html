@@ -16,9 +16,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style/style.css">
+
+    <!-- Scripts -->
+    <script src="/script/script.js" defer></script>
 </head>
 <body>
+
+    <!-- Pills flottantes décoratives -->
+    <div class="floating-pill pill-1"></div>
+    <div class="floating-pill pill-2"></div>
+    <div class="floating-pill pill-3"></div>
+    <div class="floating-pill pill-4"></div>
+
     <header>
         <nav>
             <div class="nav-logo">WM</div>
@@ -39,7 +49,7 @@
         <section id="hero" class="hero visible">
             <h1>WOSTRY <span class="accent">MATIS</span></h1>
             <p class="subtitle">Développeur Web Full-Stack & Étudiant CREA</p>
-            <p class="baseline">En recherche d'alternance de 2 ans à Genève (développement web full-stack)</p>
+            <p class="baseline">En recherche d'alternance de 2 ans à Genève </br>(développement web full-stack)</p>
             <div class="hero-cta">
                 <button class="btn btn-primary" onclick="window.print()">📄 Télécharger le CV (PDF)</button>
                 <a href="#contact" class="btn btn-ghost">📧 Me contacter</a>
@@ -47,13 +57,13 @@
         </section>
 
         <!-- À propos -->
-        <section id="about">
+        <section id="about" class="visible">
             <h2>À propos</h2>
-            <p>Mettre un texte de présentation 'recherche / point fort, etc)</p>
+            <p>Mettre un texte de présentation (recherche / point fort, etc)</p>
         </section>
 
         <!-- Expériences -->
-        <section id="experience">
+        <section id="experience" class="visible">
             <h2>Expériences professionnelles</h2>
             <div class="timeline">
                 <div class="timeline-item">
@@ -331,8 +341,5 @@
     <footer>
         <p>&copy; 2025 Wostry Matis. Tous droits réservés.</p>
     </footer>
-
-    <!-- Scripts -->
-    <script src="script.js"></script>
 </body>
 </html>
