@@ -797,11 +797,8 @@ RESPONSIVE
 }
 
 /* ============================================
-   STYLES POUR GÉNÉRATION PDF (html2pdf.js)
-   ============================================ */
-body.pdf-generating {
-    /* Styles appliqués pendant la génération du PDF */
-}
+ STYLES POUR GÉNÉRATION PDF (html2pdf.js)
+============================================ */
 
 body.pdf-generating header,
 body.pdf-generating .theme-toggle,
