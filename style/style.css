@@ -359,6 +359,7 @@ BUTTONS
     background: var(--clr-accent-2);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(225, 25, 49, 0.3);
+    color: white;
 }
 
 .btn-ghost {
@@ -797,9 +798,13 @@ RESPONSIVE
 }
 
 /* ============================================
- STYLES POUR GÉNÉRATION PDF (html2pdf.js)
-============================================ */
+   STYLES POUR GÉNÉRATION PDF (html2pdf.js)
+   ============================================ */
+body.pdf-generating {
+    background: white !important;
+}
 
+/* Masquer les éléments inutiles */
 body.pdf-generating header,
 body.pdf-generating .theme-toggle,
 body.pdf-generating .floating-pill,
@@ -807,57 +812,342 @@ body.pdf-generating .contact-form,
 body.pdf-generating footer,
 body.pdf-generating .hero-cta,
 body.pdf-generating .project-links,
-body.pdf-generating .btn {
+body.pdf-generating .btn,
+body.pdf-generating body::before {
     display: none !important;
+    visibility: hidden !important;
 }
 
+/* Réinitialiser le layout pour PDF */
 body.pdf-generating main {
     padding-top: 0 !important;
+    max-width: 100% !important;
+    background: white !important;
 }
 
 body.pdf-generating section {
-    page-break-inside: avoid;
+    page-break-inside: avoid !important;
     opacity: 1 !important;
     transform: none !important;
-    padding: 0.5rem 0 !important;
-    margin-bottom: 0.5rem !important;
+    padding: 0.4rem 1rem !important;
+    margin-bottom: 0.6rem !important;
+    max-width: 100% !important;
+    background: white !important;
 }
 
-body.pdf-generating h1 {
-    font-size: 2rem !important;
-    margin-bottom: 0.25rem !important;
-}
-
-body.pdf-generating h2 {
-    font-size: 1.3rem !important;
-    margin-bottom: 0.5rem !important;
-    border-bottom: 2px solid #E11931;
-    padding-bottom: 0.25rem;
-}
-
+/* Hero section compacte et professionnelle */
 body.pdf-generating .hero {
     min-height: auto !important;
-    padding: 0.5rem 0 !important;
+    padding: 0.5rem 1rem 1rem !important;
+    margin-bottom: 0.8rem !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+}
+
+body.pdf-generating .hero h1 {
+    font-size: 2.2rem !important;
+    margin-bottom: 0.3rem !important;
+    color: #1D1D1F !important;
+}
+
+body.pdf-generating .hero h1 .accent {
+    color: #E11931 !important;
+}
+
+body.pdf-generating .hero .subtitle {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.4rem !important;
+    color: #333 !important;
+}
+
+body.pdf-generating .hero .baseline {
+    font-size: 0.95rem !important;
+    padding: 0.6rem 1rem !important;
+    margin: 0 0 0.6rem 0 !important;
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+    border-left: 4px solid #E11931 !important;
+    color: #333 !important;
+}
+
+/* Titres de sections */
+body.pdf-generating h2 {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.6rem !important;
+    margin-top: 0.3rem !important;
+    border-bottom: 2px solid #E11931 !important;
+    padding-bottom: 0.3rem !important;
+    color: #1D1D1F !important;
+}
+
+body.pdf-generating h3 {
+    font-size: 1.05rem !important;
+    margin-bottom: 0.3rem !important;
+    color: #1D1D1F !important;
+}
+
+/* Section À propos */
+body.pdf-generating #about p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0.5rem !important;
+    color: #333 !important;
+}
+
+/* Timeline ultra-optimisée */
+body.pdf-generating .timeline {
+    padding-left: 1.2rem !important;
+}
+
+body.pdf-generating .timeline::before {
+    width: 2px !important;
+    background: #E11931 !important;
+    left: 0 !important;
 }
 
 body.pdf-generating .timeline-item {
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 0.8rem !important;
+    padding-left: 1.2rem !important;
+    page-break-inside: avoid !important;
+}
+
+body.pdf-generating .timeline-item::before {
+    width: 10px !important;
+    height: 10px !important;
+    left: -1.25rem !important;
+    top: 0.35rem !important;
+    background: #E11931 !important;
+    border: 2px solid white !important;
+}
+
+body.pdf-generating .timeline-header {
+    margin-bottom: 0.3rem !important;
+}
+
+body.pdf-generating .timeline-title {
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: #1D1D1F !important;
+}
+
+body.pdf-generating .timeline-company {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.25rem !important;
+    color: #555 !important;
+}
+
+body.pdf-generating .timeline-date {
+    font-size: 0.85rem !important;
+    color: #E11931 !important;
+    font-weight: 600 !important;
 }
 
 body.pdf-generating .timeline-description {
     font-size: 0.85rem !important;
-    line-height: 1.4 !important;
+    line-height: 1.45 !important;
+    margin-bottom: 0.3rem !important;
+    color: #444 !important;
 }
 
-body.pdf-generating .skills-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 0.75rem !important;
+body.pdf-generating .timeline-description ul {
+    margin-top: 0.3rem !important;
+    padding-left: 1.2rem !important;
+}
+
+body.pdf-generating .timeline-description li {
+    margin-bottom: 0.15rem !important;
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    color: #444 !important;
+}
+
+/* Badges de technologie */
+body.pdf-generating .tech-badges {
+    gap: 0.35rem !important;
+    margin-top: 0.4rem !important;
 }
 
 body.pdf-generating .badge {
+    padding: 0.2rem 0.6rem !important;
     font-size: 0.75rem !important;
+    border: 1px solid #ddd !important;
+    background: #f8f8f8 !important;
+    color: #333 !important;
+    border-radius: 4px !important;
 }
 
+/* Projets compacts */
+body.pdf-generating .projects-list {
+    gap: 0.6rem !important;
+}
+
+body.pdf-generating .project-item {
+    padding: 0.6rem !important;
+    border: 1px solid #ddd !important;
+    background: #fafafa !important;
+    page-break-inside: avoid !important;
+}
+
+body.pdf-generating .project-title {
+    font-size: 1rem !important;
+    margin-bottom: 0.3rem !important;
+    color: #1D1D1F !important;
+    font-weight: 600 !important;
+}
+
+body.pdf-generating .project-description {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.4rem !important;
+    color: #444 !important;
+}
+
+/* Compétences en 2 colonnes */
+body.pdf-generating .skills-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.8rem !important;
+}
+
+body.pdf-generating .skill-category h3 {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.4rem !important;
+    color: #E11931 !important;
+    font-weight: 600 !important;
+}
+
+body.pdf-generating .skill-list {
+    list-style: none !important;
+}
+
+body.pdf-generating .skill-list li {
+    padding: 0.25rem 0 !important;
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    color: #444 !important;
+    border-bottom: 1px solid #eee !important;
+}
+
+body.pdf-generating .skill-list li:last-child {
+    border-bottom: none !important;
+}
+
+/* Soft skills en ligne */
+body.pdf-generating .soft-skills {
+    gap: 0.5rem !important;
+    flex-wrap: wrap !important;
+}
+
+body.pdf-generating .soft-skill {
+    padding: 0.35rem 0.8rem !important;
+    font-size: 0.8rem !important;
+    border: 1px solid #ddd !important;
+    background: #f8f8f8 !important;
+    color: #333 !important;
+    border-radius: 4px !important;
+}
+
+/* Formation */
+body.pdf-generating .education-item {
+    padding: 0.6rem !important;
+    margin-bottom: 0.6rem !important;
+    border: 1px solid #ddd !important;
+    background: #fafafa !important;
+    page-break-inside: avoid !important;
+}
+
+body.pdf-generating .education-degree {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #1D1D1F !important;
+}
+
+body.pdf-generating .education-school {
+    font-size: 0.85rem !important;
+    color: #555 !important;
+}
+
+body.pdf-generating .education-date {
+    font-size: 0.85rem !important;
+    color: #E11931 !important;
+    font-weight: 600 !important;
+}
+
+/* Disponibilité */
+body.pdf-generating .availability-card {
+    padding: 0.8rem !important;
+    background: linear-gradient(135deg, #E11931, #FF4757) !important;
+    color: white !important;
+    border-radius: 6px !important;
+}
+
+body.pdf-generating .availability-card h3 {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.5rem !important;
+    color: white !important;
+}
+
+body.pdf-generating .availability-info {
+    gap: 1.5rem !important;
+    margin-top: 0.5rem !important;
+}
+
+body.pdf-generating .availability-item {
+    font-size: 0.85rem !important;
+}
+
+body.pdf-generating .availability-item strong {
+    font-size: 0.9rem !important;
+    display: block !important;
+    margin-bottom: 0.2rem !important;
+}
+
+/* Loisirs */
+body.pdf-generating .interests-list {
+    gap: 0.5rem !important;
+    list-style: none !important;
+}
+
+body.pdf-generating .interests-list li {
+    padding: 0.35rem 0.8rem !important;
+    font-size: 0.8rem !important;
+    border: 1px solid #ddd !important;
+    background: #f8f8f8 !important;
+    color: #333 !important;
+    border-radius: 4px !important;
+}
+
+/* Contact */
 body.pdf-generating .contact-grid {
     grid-template-columns: 1fr !important;
+}
+
+body.pdf-generating .contact-info h3 {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+    color: #1D1D1F !important;
+}
+
+body.pdf-generating .contact-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+    list-style: none !important;
+}
+
+body.pdf-generating .contact-links li {
+    font-size: 0.85rem !important;
+    margin-bottom: 0 !important;
+    color: #333 !important;
+}
+
+body.pdf-generating .contact-links a {
+    color: #E11931 !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+}
+
+/* Forcer les couleurs pour le PDF */
+body.pdf-generating * {
+    box-shadow: none !important;
+    text-shadow: none !important;
 }

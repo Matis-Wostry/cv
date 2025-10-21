@@ -4,64 +4,87 @@
 const downloadPdfBtn = document.getElementById('downloadPdfBtn');
 
 if (downloadPdfBtn) {
-    downloadPdfBtn.addEventListener('click', function() {
+    downloadPdfBtn.addEventListener('click', async function() {
         // Désactiver le bouton pendant la génération
         downloadPdfBtn.disabled = true;
         downloadPdfBtn.textContent = '⏳ Génération du PDF...';
         
-        // Sélectionner le contenu à convertir (tout le main)
-        const element = document.querySelector('main');
+        // Ajouter la classe pour les styles PDF
+        document.body.classList.add('pdf-generating');
         
-        // Options de configuration du PDF
+        // Attendre que les styles soient appliqués
+        await new Promise(resolve => setTimeout(resolve, 100));
+        
+        // Cloner le main pour manipulation sans affecter la page
+        const element = document.querySelector('main').cloneNode(true);
+        
+        // Supprimer les éléments indésirables du clone
+        const elementsToRemove = element.querySelectorAll('.hero-cta, .btn, .project-links, .contact-form');
+        elementsToRemove.forEach(el => el.remove());
+        
+        // Options de configuration du PDF optimisées
         const options = {
-            margin: [10, 15, 10, 15], // [haut, droite, bas, gauche] en mm
+            margin: [10, 15, 10, 15], // Marges augmentées [haut, droite, bas, gauche] en mm
             filename: 'CV-Wostry-Matis.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
+            image: { 
+                type: 'jpeg', 
+                quality: 1 // Qualité maximale
+            },
             html2canvas: { 
-                scale: 2,
+                scale: 2.5, // Réduit légèrement pour éviter débordement
                 useCORS: true,
                 letterRendering: true,
-                logging: false
+                logging: false,
+                backgroundColor: '#ffffff',
+                removeContainer: true,
+                imageTimeout: 0,
+                scrollY: 0,
+                scrollX: 0,
+                windowWidth: 1000, // Réduit pour éviter débordement
+                x: 0,
+                y: 0
             },
             jsPDF: { 
                 unit: 'mm', 
                 format: 'a4', 
                 orientation: 'portrait',
-                compress: true
+                compress: true,
+                precision: 16
             },
             pagebreak: { 
-                mode: ['avoid-all', 'css', 'legacy'],
-                before: '.page-break-before',
-                after: '.page-break-after',
-                avoid: 'section'
+                mode: ['avoid-all', 'css'],
+                avoid: ['section', '.timeline-item', '.project-item', '.education-item']
             }
         };
         
-        // Ajouter une classe temporaire pour le style PDF
-        document.body.classList.add('pdf-generating');
-        
-        // Générer et télécharger le PDF
-        html2pdf()
-            .set(options)
-            .from(element)
-            .save()
-            .then(() => {
-                // Réactiver le bouton après génération
-                downloadPdfBtn.disabled = false;
+        try {
+            // Générer et télécharger le PDF
+            await html2pdf()
+                .set(options)
+                .from(element)
+                .save();
+            
+            // Réactiver le bouton après génération
+            downloadPdfBtn.disabled = false;
+            downloadPdfBtn.textContent = '✅ PDF téléchargé !';
+            document.body.classList.remove('pdf-generating');
+            
+            // Réinitialiser après 3 secondes
+            setTimeout(() => {
                 downloadPdfBtn.textContent = '📄 Télécharger le CV (PDF)';
-                document.body.classList.remove('pdf-generating');
-            })
-            .catch((error) => {
-                console.error('Erreur lors de la génération du PDF:', error);
-                downloadPdfBtn.disabled = false;
-                downloadPdfBtn.textContent = '❌ Erreur - Réessayer';
-                document.body.classList.remove('pdf-generating');
-                
-                // Réinitialiser le texte après 3 secondes
-                setTimeout(() => {
-                    downloadPdfBtn.textContent = '📄 Télécharger le CV (PDF)';
-                }, 3000);
-            });
+            }, 3000);
+            
+        } catch (error) {
+            console.error('Erreur lors de la génération du PDF:', error);
+            downloadPdfBtn.disabled = false;
+            downloadPdfBtn.textContent = '❌ Erreur - Réessayer';
+            document.body.classList.remove('pdf-generating');
+            
+            // Réinitialiser le texte après 3 secondes
+            setTimeout(() => {
+                downloadPdfBtn.textContent = '📄 Télécharger le CV (PDF)';
+            }, 3000);
+        }
     });
 }
 
