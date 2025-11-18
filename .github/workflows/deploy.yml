@@ -23,8 +23,8 @@ jobs:
           echo "${{ secrets.SSH_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
 
       - name: Upload website via rsync
-        run: rsync -az --delete -e "ssh -p ${{ secrets.SSH_PORT }}" ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.APP_DIR }}
-        
+        run: rsync -az --delete -e "ssh -p ${{ secrets.SSH_PORT }}" ./ ${{ secrets.SSH_TARGET }}
+
       - name: Reload Caddy
         run: |
           ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
