@@ -26,6 +26,5 @@ jobs:
         run: rsync -az --delete -e "ssh -p ${{ secrets.SSH_PORT }}" ./ ${{ secrets.SSH_TARGET }}
 
       - name: Reload Caddy
-        run: |
-          ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
-          "docker exec caddy caddy reload --config /etc/caddy/Caddyfile"
+        run: ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_LOGIN }} "docker exec caddy caddy reload --config /etc/caddy/Caddyfile"
+
