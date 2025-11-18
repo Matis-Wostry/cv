@@ -24,7 +24,7 @@ jobs:
 
       - name: Upload website via rsync
         run: rsync -az --delete -e "ssh -p ${{ secrets.SSH_PORT }}" ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.APP_DIR }}
-
+        
       - name: Reload Caddy
         run: |
           ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
