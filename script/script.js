@@ -110,6 +110,20 @@ themeToggle.addEventListener('click', () => {
 });
 
 // ============================================
+// MENU TOGGLE
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+  const checkbox = document.querySelector('.hamburger input[type="checkbox"]');
+  const navOrdi  = document.querySelector('.nav-ordi');
+  if (!checkbox || !navOrdi) return;
+
+  const sync = () => navOrdi.classList.toggle('is-visible', checkbox.checked);
+
+  sync();                 // état initial
+  checkbox.addEventListener('change', sync); // ouvre/ferme au clic
+});
+
+// ============================================
 // SCROLL ANIMATIONS (IntersectionObserver)
 // ============================================
 const observerOptions = {
