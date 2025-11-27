@@ -320,7 +320,7 @@ nav {
 }
 
 .is-visible{
-    display: block !important;
+    pointer-events: auto;
 }
 /* ============================================
 MAIN LAYOUT
@@ -721,7 +721,7 @@ INTERESTS
 
 /* ============================================
    CONTACT FORM
-   ============================================ */
+============================================ */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -825,9 +825,116 @@ RESPONSIVE
     }
     
     .nav-ordi{
+        display: flex;
+        position: fixed;
+        left: 1rem;
+        right: 1rem;
+        top: 87px;
+        background: var(--clr-surface);
+        border: 1px solid var(--clr-border);
+        border-radius: 12px;
+        z-index: 999;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0.5rem 0.75rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+
+        /* états pour l'animation */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-8px);
+        transition:
+            max-height 420ms cubic-bezier(.2,.9,.2,1),
+            opacity 260ms ease,
+            transform 300ms ease;
+        -webkit-tap-highlight-color: transparent;
+        pointer-events: none;
+    }
+
+    .nav-ordi.is-visible{
+        max-height: calc(100vh - 96px);
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .nav-ordi .nav-links{
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0.5rem 0.5rem;
+    }
+
+    .nav-ordi .nav-links a{
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 320ms ease, transform 320ms ease;
+        transition-delay: 0ms;
+    }
+
+    .nav-ordi.is-visible .nav-links a{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+    .nav-ordi.is-visible .nav-links a:nth-child(1){ transition-delay: 60ms; }
+    .nav-ordi.is-visible .nav-links a:nth-child(2){ transition-delay: 120ms; }
+    .nav-ordi.is-visible .nav-links a:nth-child(3){ transition-delay: 180ms; }
+    .nav-ordi.is-visible .nav-links a:nth-child(4){ transition-delay: 240ms; }
+    .nav-ordi.is-visible .nav-links a:nth-child(5){ transition-delay: 300ms; }
+    .nav-ordi.is-visible .nav-links a:nth-child(6){ transition-delay: 360ms; }
+
+    .nav-ordi>.theme-toggle{
+        margin-top: 0.5rem;
+        align-self: flex-end;
+    }
+
+    .logo-ordinateur{
         display: none;
+    }
+
+    .nav-mobile{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hero-cta {
         width: 100%;
-        height: 80vh;
+        max-width: 300px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: var(--spacing-md) 2.5rem;
+    }
+
+    .timeline {
+        padding-left: 1rem;
+    }
+
+    .timeline-item {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-item::before{
+        left : -1.5rem
+    }
+
+    .nav-ordi>.theme-toggle{
+        margin-top: 1.5rem;
+    }
+
+    .logo-ordinateur{
+        display: none;
     }
 
     .nav-mobile{

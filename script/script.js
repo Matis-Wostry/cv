@@ -110,17 +110,45 @@ themeToggle.addEventListener('click', () => {
 });
 
 // ============================================
-// MENU TOGGLE
+// MENU TOGGLE (amélioré pour animation + accessibilité)
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
   const checkbox = document.querySelector('.hamburger input[type="checkbox"]');
   const navOrdi  = document.querySelector('.nav-ordi');
   if (!checkbox || !navOrdi) return;
 
-  const sync = () => navOrdi.classList.toggle('is-visible', checkbox.checked);
+  const setOpenState = (isOpen) => {
+    navOrdi.classList.toggle('is-visible', isOpen);
+    checkbox.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    // empêche le scroll de fond quand menu ouvert
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  };
 
-  sync();                 // état initial
-  checkbox.addEventListener('change', sync); // ouvre/ferme au clic
+  // synchronise l'état initial (utile si persisté)
+  setOpenState(!!checkbox.checked);
+
+  // ouvre/ferme au clic
+  checkbox.addEventListener('change', () => {
+    setOpenState(checkbox.checked);
+  });
+
+  // ferme le menu quand on clique sur un lien (pratique sur mobile)
+  navOrdi.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      checkbox.checked = false;
+      setOpenState(false);
+    });
+  });
+
+  // ferme le menu si on touche en dehors (pour UX mobile)
+  document.addEventListener('click', (e) => {
+    if (!navOrdi.contains(e.target) && !e.target.closest('.hamburger')) {
+      if (checkbox.checked) {
+        checkbox.checked = false;
+        setOpenState(false);
+      }
+    }
+  });
 });
 
 // ============================================
