@@ -824,6 +824,10 @@ RESPONSIVE
         padding: 1rem;
     }
     
+    .theme-toggle{
+        display: none;
+    }
+
     .nav-ordi{
         display: flex;
         position: fixed;
@@ -838,6 +842,7 @@ RESPONSIVE
         gap: 1rem;
         padding: 0.5rem 0.75rem;
         box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        text-align: center;
 
         /* états pour l'animation */
         max-height: 0;
