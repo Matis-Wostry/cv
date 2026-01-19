@@ -63,7 +63,7 @@ body {
   position: relative;
 }
 
-/* Background grid animé subtil */
+/* Background grid avec accent rouge */
 body::before {
   content: "";
   position: fixed;
@@ -72,117 +72,12 @@ body::before {
   width: 100%;
   height: 100%;
   background-image:
-    linear-gradient(var(--clr-border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--clr-border) 1px, transparent 1px);
+    linear-gradient(var(--clr-accent) 1px, transparent 1px),
+    linear-gradient(90deg, var(--clr-accent) 1px, transparent 1px);
   background-size: 50px 50px;
-  opacity: 0.15;
+  background-position: 0 0;
+  opacity: 0.08;
   z-index: -1;
-  animation: gridMove 20s linear infinite;
-}
-
-@keyframes gridMove {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(50px, 50px);
-  }
-}
-
-/* Pills flottantes rouges */
-.floating-pill {
-  position: fixed;
-  background: linear-gradient(135deg, var(--clr-accent), var(--clr-accent-2));
-  border-radius: 50%;
-  opacity: 0.25;
-  z-index: 0;
-  pointer-events: none;
-  filter: blur(40px);
-}
-
-.pill-1 {
-  width: 150px;
-  height: 150px;
-  top: 10%;
-  left: 5%;
-  animation:
-    float 8s ease-in-out infinite,
-    pulse 3s ease-in-out infinite;
-  animation-delay: 0s, 0s;
-}
-
-.pill-2 {
-  width: 100px;
-  height: 100px;
-  top: 60%;
-  right: 10%;
-  animation:
-    float 10s ease-in-out infinite,
-    pulse 4s ease-in-out infinite;
-  animation-delay: 2s, 1s;
-}
-
-.pill-3 {
-  width: 130px;
-  height: 130px;
-  bottom: 15%;
-  left: 15%;
-  animation:
-    float 12s ease-in-out infinite,
-    pulse 3.5s ease-in-out infinite;
-  animation-delay: 4s, 2s;
-}
-
-.pill-4 {
-  width: 90px;
-  height: 90px;
-  top: 40%;
-  right: 25%;
-  animation:
-    float 9s ease-in-out infinite,
-    pulse 4.5s ease-in-out infinite;
-  animation-delay: 1s, 0.5s;
-}
-
-.pill-5 {
-  width: 180px;
-  height: 180px;
-  top: 60%;
-  right: 45%;
-  animation:
-    float 9s ease-in-out infinite,
-    pulse 4.5s ease-in-out infinite;
-  animation-delay: 1s, 0.5s;
-}
-
-/* Animation de lévitation douce */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) translateX(0px);
-  }
-  25% {
-    transform: translateY(-20px) translateX(10px);
-  }
-  50% {
-    transform: translateY(-10px) translateX(-15px);
-  }
-  75% {
-    transform: translateY(-25px) translateX(5px);
-  }
-}
-
-/* Animation de battement de cœur (pulsation) */
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.25;
-  }
-  50% {
-    transform: scale(1.15);
-    opacity: 0.4;
-  }
 }
 
 /* ============================================
@@ -430,6 +325,35 @@ HERO SECTION
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.scroll-arrow {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  color: var(--clr-accent);
+  font-size: 32px;
+  animation: levitate 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px var(--clr-accent))
+    drop-shadow(0 0 20px var(--clr-accent));
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.scroll-arrow:hover {
+  filter: drop-shadow(0 0 15px var(--clr-accent))
+    drop-shadow(0 0 30px var(--clr-accent));
+}
+
+@keyframes levitate {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 /* ============================================
