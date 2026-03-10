@@ -648,6 +648,16 @@ EDUCATION
   color: var(--clr-muted);
 }
 
+.education-details {
+  margin-top: 0.75rem;
+  padding-left: 1.2rem;
+  color: var(--clr-text);
+}
+
+.education-details li {
+  margin-bottom: 0.35rem;
+}
+
 /* ============================================
 AVAILABILITY
 ============================================ */
