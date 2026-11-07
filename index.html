@@ -189,205 +189,214 @@
         <section id="projects">
             <h2>Projets</h2>
             <!-- content:projects -->
-            <div class="project-category">
-                <h3 class="project-category-title">Projets pro</h3>
-                <p class="project-category-description">En entreprise et en freelance.</p>
-                <div class="projects-list">
-                    <article class="project-item">
-                        <h4 class="project-title">Le MieuxDisant</h4>
-                        <p class="project-description">Site WordPress conçu sur Figma puis développé en alternance.</p>
-                        <div class="project-links">
-                            <a href="https://lemieuxdisant.fr/" target="_blank" rel="noopener">→ Site</a>
-                        </div>
-                        <div class="tech-badges">
-                            <ul>
-                                <li class="badge">WordPress</li>
-                                <li class="badge">Figma</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="project-item">
-                        <h4 class="project-title">MB Ventilation</h4>
-                        <p class="project-description">Site WordPress dédié aux systèmes de ventilation, réalisé en freelance.</p>
-                        <div class="project-links">
-                            <a href="https://mb-ventilation.fr/" target="_blank" rel="noopener">→ Site</a>
-                        </div>
-                        <div class="tech-badges">
-                            <ul>
-                                <li class="badge">WordPress</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="project-item">
-                        <h4 class="project-title">MB Home</h4>
-                        <p class="project-description">Site WordPress dédié au carrelage, au placo et à la démolition, réalisé en freelance.</p>
-                        <div class="project-links">
-                            <a href="https://mb-home.fr/" target="_blank" rel="noopener">→ Site</a>
-                        </div>
-                        <div class="tech-badges">
-                            <ul>
-                                <li class="badge">WordPress</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="project-item">
-                        <h4 class="project-title">Compresseur d’images</h4>
-                        <p class="project-description">Application Python qui compresse les photos au format WebP, créée pour faciliter mes missions de freelance.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Matis-Wostry/compresseur-img-python" target="_blank" rel="noopener">→ Code</a>
-                        </div>
-                        <div class="tech-badges">
-                            <ul>
-                                <li class="badge">Python</li>
-                            </ul>
-                        </div>
-                    </article>
+            <div class="project-browser" data-project-tabs>
+                <div class="project-tabs" role="tablist" aria-label="Catégories de projets">
+                    <button type="button" class="project-tab" role="tab" id="onglet-pro" aria-controls="projets-pro">Projets pro <span class="project-tab-count">4</span></button>
+                    <button type="button" class="project-tab" role="tab" id="onglet-ecole" aria-controls="projets-ecole">Projets école <span class="project-tab-count">6</span></button>
+                    <button type="button" class="project-tab" role="tab" id="onglet-perso" aria-controls="projets-perso">Projets perso <span class="project-tab-count">3</span></button>
                 </div>
-            </div>
-            <div class="project-category">
-                <h3 class="project-category-title">Projets école</h3>
-                <p class="project-category-description">Réalisés pendant mes études.</p>
-                <div class="projects-list">
-                    <article class="project-item">
-                        <h4 class="project-title">Pokédex</h4>
-                        <p class="project-description">Une API REST documentée avec Swagger et une interface React pour chercher et filtrer les Pokémon.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Matis-Wostry/Pokedex" target="_blank" rel="noopener">→ Code</a>
-                            <a href="https://pokedex.matis-wostry.com/" target="_blank" rel="noopener">→ Démo</a>
+                <div class="project-panels">
+                    <div class="project-category" role="tabpanel" id="projets-pro" aria-labelledby="onglet-pro">
+                        <h3 class="project-category-title">Projets pro</h3>
+                        <p class="project-category-description">En entreprise et en freelance.</p>
+                        <div class="projects-list">
+                            <article class="project-item">
+                                <h4 class="project-title">Le MieuxDisant</h4>
+                                <p class="project-description">Site WordPress conçu sur Figma puis développé en alternance.</p>
+                                <div class="project-links">
+                                    <a href="https://lemieuxdisant.fr/" target="_blank" rel="noopener">→ Site</a>
+                                </div>
+                                <div class="tech-badges">
+                                    <ul>
+                                        <li class="badge">WordPress</li>
+                                        <li class="badge">Figma</li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <article class="project-item">
+                                <h4 class="project-title">MB Ventilation</h4>
+                                <p class="project-description">Site WordPress dédié aux systèmes de ventilation, réalisé en freelance.</p>
+                                <div class="project-links">
+                                    <a href="https://mb-ventilation.fr/" target="_blank" rel="noopener">→ Site</a>
+                                </div>
+                                <div class="tech-badges">
+                                    <ul>
+                                        <li class="badge">WordPress</li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <article class="project-item">
+                                <h4 class="project-title">MB Home</h4>
+                                <p class="project-description">Site WordPress dédié au carrelage, au placo et à la démolition, réalisé en freelance.</p>
+                                <div class="project-links">
+                                    <a href="https://mb-home.fr/" target="_blank" rel="noopener">→ Site</a>
+                                </div>
+                                <div class="tech-badges">
+                                    <ul>
+                                        <li class="badge">WordPress</li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <article class="project-item">
+                                <h4 class="project-title">Compresseur d’images</h4>
+                                <p class="project-description">Application Python qui compresse les photos au format WebP, créée pour faciliter mes missions de freelance.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Matis-Wostry/compresseur-img-python" target="_blank" rel="noopener">→ Code</a>
+                                </div>
+                                <div class="tech-badges">
+                                    <ul>
+                                        <li class="badge">Python</li>
+                                    </ul>
+                                </div>
+                            </article>
                         </div>
-                        <div class="tech-badges">
-                            <ul>
-                                <li class="badge">React</li>
-                                <li class="badge">Express</li>
-                                <li class="badge">MongoDB</li>
-                                <li class="badge">Swagger</li>
-                            </ul>
+                    </div>
+                    <div class="project-category" role="tabpanel" id="projets-ecole" aria-labelledby="onglet-ecole">
+                        <h3 class="project-category-title">Projets école</h3>
+                        <p class="project-category-description">Réalisés pendant mes études.</p>
+                        <div class="projects-list">
+                            <article class="project-item">
+                                <h4 class="project-title">Pokédex</h4>
+                                <p class="project-description">Une API REST documentée avec Swagger et une interface React pour chercher et filtrer les Pokémon.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Matis-Wostry/Pokedex" target="_blank" rel="noopener">→ Code</a>
+                                    <a href="https://pokedex.matis-wostry.com/" target="_blank" rel="noopener">→ Démo</a>
+                                </div>
+                                <div class="tech-badges">
+                                    <ul>
+                                        <li class="badge">React</li>
+                                        <li class="badge">Express</li>
+                                        <li class="badge">MongoDB</li>
+                                        <li class="badge">Swagger</li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <article class="project-item">
+                                <h4 class="project-title">Application météo</h4>
+                                <p class="project-description">Prévisions par ville et alertes par email planifiées, en Laravel.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Matis-Wostry/iut-weather" target="_blank" rel="noopener">→ Code</a>
+                                    <a href="https://iut-weather.matis-wostry.com/" target="_blank" rel="noopener">→ Démo</a>
+                                </div>
+                                <div class="tech-badges">
+                                    <ul>
+                                        <li class="badge">Laravel</li>
+                                        <li class="badge">PHP</li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <article class="project-item">
+                                <h4 class="project-title">Gestion d’école</h4>
+                                <p class="project-description">Application Java pour gérer élèves, livres, UV et inscriptions, avec une base MySQL en JDBC et une interface Swing testée.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Matis-Wostry/gestionEcole" target="_blank" rel="noopener">→ Code</a>
+                                </div>
+                                <div class="tech-badges">
+                                    <ul>
+                                        <li class="badge">Java</li>
+                                        <li class="badge">MySQL</li>
+                                        <li class="badge">JDBC</li>
+                                        <li class="badge">Swing</li>
+                                        <li class="badge">JUnit</li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <article class="project-item">
+                                <h4 class="project-title">Azteka</h4>
+                                <p class="project-description">Intégration responsive de la maquette Figma d’une équipe e-sport.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Matis-Wostry/integration-maquette" target="_blank" rel="noopener">→ Code</a>
+                                    <a href="https://azteka.matis-wostry.com/" target="_blank" rel="noopener">→ Démo</a>
+                                    <a href="https://www.figma.com/design/fiBO5bsAcP9Ks7A0yzx2kl/Azteka-Esports-Team-%7C-Info-%7C-Ecommerce--Community---copie-?node-id=1-6" target="_blank" rel="noopener">→ Maquette</a>
+                                </div>
+                                <div class="tech-badges">
+                                    <ul>
+                                        <li class="badge">HTML</li>
+                                        <li class="badge">CSS</li>
+                                        <li class="badge">Figma</li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <article class="project-item">
+                                <h4 class="project-title">Veille techno MCP</h4>
+                                <p class="project-description">Veille technique automatisée : l’actualité GitHub et Dev.to est synthétisée en français par Claude, stockée dans SQLite et exposée par un serveur MCP.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Matis-Wostry/MCP-Crea" target="_blank" rel="noopener">→ Code</a>
+                                </div>
+                                <div class="tech-badges">
+                                    <ul>
+                                        <li class="badge">TypeScript</li>
+                                        <li class="badge">Claude</li>
+                                        <li class="badge">MCP</li>
+                                        <li class="badge">SQLite</li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <article class="project-item">
+                                <h4 class="project-title">Calendrier PHP</h4>
+                                <p class="project-description">Calendrier dynamique en PHP natif : événements avec images en CRUD, mois mémorisé en session et dimanches désactivés.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Matis-Wostry/calendrier-php" target="_blank" rel="noopener">→ Code</a>
+                                </div>
+                                <div class="tech-badges">
+                                    <ul>
+                                        <li class="badge">PHP</li>
+                                        <li class="badge">Tailwind CSS</li>
+                                        <li class="badge">JavaScript</li>
+                                    </ul>
+                                </div>
+                            </article>
                         </div>
-                    </article>
-                    <article class="project-item">
-                        <h4 class="project-title">Application météo</h4>
-                        <p class="project-description">Prévisions par ville et alertes par email planifiées, en Laravel.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Matis-Wostry/iut-weather" target="_blank" rel="noopener">→ Code</a>
-                            <a href="https://iut-weather.matis-wostry.com/" target="_blank" rel="noopener">→ Démo</a>
+                    </div>
+                    <div class="project-category" role="tabpanel" id="projets-perso" aria-labelledby="onglet-perso">
+                        <h3 class="project-category-title">Projets perso</h3>
+                        <p class="project-category-description">Pour apprendre et expérimenter.</p>
+                        <div class="projects-list">
+                            <article class="project-item">
+                                <h4 class="project-title">La Chambre du Dev</h4>
+                                <p class="project-description">Mon portfolio sous forme de jeu : une chambre en pixel art à explorer, avec un moteur d’échecs, des sons synthétisés et un terminal.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Matis-Wostry/portfolio-pixel" target="_blank" rel="noopener">→ Code</a>
+                                </div>
+                                <div class="tech-badges">
+                                    <ul>
+                                        <li class="badge">Phaser</li>
+                                        <li class="badge">JavaScript</li>
+                                        <li class="badge">Vite</li>
+                                        <li class="badge">PixelArt</li>
+                                        <li class="badge">WebAudio</li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <article class="project-item">
+                                <h4 class="project-title">Articles WordPress</h4>
+                                <p class="project-description">Script Python qui réécrit automatiquement des articles WordPress avec l’API d’OpenAI.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Matis-Wostry/SEO-article" target="_blank" rel="noopener">→ Code</a>
+                                </div>
+                                <div class="tech-badges">
+                                    <ul>
+                                        <li class="badge">Python</li>
+                                        <li class="badge">OpenAI</li>
+                                        <li class="badge">API</li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <article class="project-item">
+                                <h4 class="project-title">Usage Limits</h4>
+                                <p class="project-description">Mod pour Claude Code qui affiche ta consommation des limites (session de 5 h et semaine) avec un verdict de rythme.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/Matis-Wostry/usage-limits" target="_blank" rel="noopener">→ Code</a>
+                                </div>
+                                <div class="tech-badges">
+                                    <ul>
+                                        <li class="badge">TypeScript</li>
+                                        <li class="badge">Claude Code</li>
+                                    </ul>
+                                </div>
+                            </article>
                         </div>
-                        <div class="tech-badges">
-                            <ul>
-                                <li class="badge">Laravel</li>
-                                <li class="badge">PHP</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="project-item">
-                        <h4 class="project-title">Gestion d’école</h4>
-                        <p class="project-description">Application Java pour gérer élèves, livres, UV et inscriptions, avec une base MySQL en JDBC et une interface Swing testée.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Matis-Wostry/gestionEcole" target="_blank" rel="noopener">→ Code</a>
-                        </div>
-                        <div class="tech-badges">
-                            <ul>
-                                <li class="badge">Java</li>
-                                <li class="badge">MySQL</li>
-                                <li class="badge">JDBC</li>
-                                <li class="badge">Swing</li>
-                                <li class="badge">JUnit</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="project-item">
-                        <h4 class="project-title">Azteka</h4>
-                        <p class="project-description">Intégration responsive de la maquette Figma d’une équipe e-sport.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Matis-Wostry/integration-maquette" target="_blank" rel="noopener">→ Code</a>
-                            <a href="https://azteka.matis-wostry.com/" target="_blank" rel="noopener">→ Démo</a>
-                            <a href="https://www.figma.com/design/fiBO5bsAcP9Ks7A0yzx2kl/Azteka-Esports-Team-%7C-Info-%7C-Ecommerce--Community---copie-?node-id=1-6" target="_blank" rel="noopener">→ Maquette</a>
-                        </div>
-                        <div class="tech-badges">
-                            <ul>
-                                <li class="badge">HTML</li>
-                                <li class="badge">CSS</li>
-                                <li class="badge">Figma</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="project-item">
-                        <h4 class="project-title">Veille techno MCP</h4>
-                        <p class="project-description">Veille technique automatisée : l’actualité GitHub et Dev.to est synthétisée en français par Claude, stockée dans SQLite et exposée par un serveur MCP.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Matis-Wostry/MCP-Crea" target="_blank" rel="noopener">→ Code</a>
-                        </div>
-                        <div class="tech-badges">
-                            <ul>
-                                <li class="badge">TypeScript</li>
-                                <li class="badge">Claude</li>
-                                <li class="badge">MCP</li>
-                                <li class="badge">SQLite</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="project-item">
-                        <h4 class="project-title">Calendrier PHP</h4>
-                        <p class="project-description">Calendrier dynamique en PHP natif : événements avec images en CRUD, mois mémorisé en session et dimanches désactivés.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Matis-Wostry/calendrier-php" target="_blank" rel="noopener">→ Code</a>
-                        </div>
-                        <div class="tech-badges">
-                            <ul>
-                                <li class="badge">PHP</li>
-                                <li class="badge">Tailwind CSS</li>
-                                <li class="badge">JavaScript</li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            <div class="project-category">
-                <h3 class="project-category-title">Projets perso</h3>
-                <p class="project-category-description">Pour apprendre et expérimenter.</p>
-                <div class="projects-list">
-                    <article class="project-item">
-                        <h4 class="project-title">La Chambre du Dev</h4>
-                        <p class="project-description">Mon portfolio sous forme de jeu : une chambre en pixel art à explorer, avec un moteur d’échecs, des sons synthétisés et un terminal.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Matis-Wostry/portfolio-pixel" target="_blank" rel="noopener">→ Code</a>
-                        </div>
-                        <div class="tech-badges">
-                            <ul>
-                                <li class="badge">Phaser</li>
-                                <li class="badge">JavaScript</li>
-                                <li class="badge">Vite</li>
-                                <li class="badge">PixelArt</li>
-                                <li class="badge">WebAudio</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="project-item">
-                        <h4 class="project-title">Articles WordPress</h4>
-                        <p class="project-description">Script Python qui réécrit automatiquement des articles WordPress avec l’API d’OpenAI.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Matis-Wostry/SEO-article" target="_blank" rel="noopener">→ Code</a>
-                        </div>
-                        <div class="tech-badges">
-                            <ul>
-                                <li class="badge">Python</li>
-                                <li class="badge">OpenAI</li>
-                                <li class="badge">API</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="project-item">
-                        <h4 class="project-title">Usage Limits</h4>
-                        <p class="project-description">Mod pour Claude Code qui affiche ta consommation des limites (session de 5 h et semaine) avec un verdict de rythme.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Matis-Wostry/usage-limits" target="_blank" rel="noopener">→ Code</a>
-                        </div>
-                        <div class="tech-badges">
-                            <ul>
-                                <li class="badge">TypeScript</li>
-                                <li class="badge">Claude Code</li>
-                            </ul>
-                        </div>
-                    </article>
+                    </div>
                 </div>
             </div>
             <!-- /content:projects -->
