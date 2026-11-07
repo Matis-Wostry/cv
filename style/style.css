@@ -1344,3 +1344,87 @@ body.pdf-generating * {
   box-shadow: none !important;
   text-shadow: none !important;
 }
+/* ============================================
+CONTENU GÉNÉRÉ DEPUIS PORTFOLIO MATIS
+Ajouts seulement : catégories de projets, détail d'un projet,
+captures, façons de travailler, compétences en mots-clés.
+============================================ */
+.project-category + .project-category {
+  margin-top: var(--spacing-lg);
+}
+
+.project-category-title {
+  font-size: 1.5rem;
+  color: var(--clr-accent);
+  margin-bottom: 0.25rem;
+}
+
+.project-category-description {
+  color: var(--clr-muted);
+  margin-bottom: 1.5rem;
+}
+
+.project-details {
+  margin-bottom: 1rem;
+  color: var(--clr-muted);
+}
+
+.project-details summary {
+  cursor: pointer;
+  color: var(--clr-accent);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.project-details p {
+  margin-bottom: 0.75rem;
+}
+
+.project-details .project-detail-label {
+  color: var(--clr-text);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.project-captures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-captures img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--clr-border);
+  border-radius: 8px;
+}
+
+.skill-category .tech-badges {
+  margin-top: 0;
+}
+
+.work-styles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: var(--spacing-md);
+}
+
+.work-style {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.work-style-quality {
+  font-weight: 700;
+  color: var(--clr-accent);
+  margin-bottom: 0.25rem;
+}
+
+.work-style-proof {
+  color: var(--clr-muted);
+}

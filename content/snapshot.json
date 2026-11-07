@@ -1,0 +1,639 @@
+{
+  "schemaVersion": 1,
+  "publishedAt": "2026-11-07T21:23:17.359Z",
+  "content": {
+    "profile": {
+      "name": "Matis Wostry",
+      "role": "Développeur full-stack junior",
+      "city": "Genève",
+      "about": "Développeur full-stack junior, je suis en Bachelor Développement web & IA à CREA Genève et en alternance chez Octoplus Solutions, en parallèle d’une activité de freelance en développement et SEO. J’aime apprendre en construisant et créer des outils utiles au quotidien, notamment pour automatiser ce qui se répète. Je recherche une alternance d’un an à Genève à partir de septembre 2027, pour continuer à monter en compétences sur le web et l’IA.",
+      "search": {
+        "contractType": "Alternance",
+        "duration": "1 an",
+        "start": "Septembre 2027",
+        "location": "Genève"
+      },
+      "goals": [
+        "Décrocher une alternance d’un an à partir de septembre 2027 à Genève",
+        "Monter en compétence sur le web et l’IA",
+        "Créer des projets qui aident le plus possible au quotidien"
+      ],
+      "motivations": [
+        "Automatiser ce qui se répète",
+        "Apprendre en construisant",
+        "Faire beaucoup de projets"
+      ],
+      "frustrations": [
+        "Les tâches répétitives faites à la main",
+        "Un projet qui reste sur mon ordinateur"
+      ],
+      "workStyle": [
+        {
+          "quality": "Autonome",
+          "proof": "En freelance, et en apprenant seul certaines compétences."
+        },
+        {
+          "quality": "Curieux",
+          "proof": "Toujours un œil sur les tendances de l’univers du développement."
+        },
+        {
+          "quality": "Concret",
+          "proof": "Mon but : créer des outils utiles à mon quotidien, qui me facilitent certaines tâches."
+        },
+        {
+          "quality": "Polyvalent",
+          "proof": "Mes différentes formations me donnent plusieurs casquettes."
+        }
+      ],
+      "softSkills": [
+        "Autonomie",
+        "Adaptabilité",
+        "Curieux",
+        "Esprit d'analyse",
+        "Patient",
+        "Rigoureux",
+        "Travail d'équipe",
+        "Réactivité"
+      ],
+      "hobbies": [
+        {
+          "id": "basket",
+          "label": "Basket"
+        },
+        {
+          "id": "echecs",
+          "label": "Échecs"
+        },
+        {
+          "id": "jeux-video",
+          "label": "Jeux vidéo"
+        },
+        {
+          "id": "mangas",
+          "label": "Mangas"
+        }
+      ],
+      "cvFile": null
+    },
+    "contact": {
+      "email": "matis.wostry@crea-inseec.com",
+      "phone": "+33 6 34 89 62 32",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/in/matis-wostry/"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/Matis-Wostry"
+        },
+        {
+          "label": "CV (PDF)",
+          "href": "https://matis-wostry.com/assets/cv/CV_Matis_Wostry.pdf"
+        }
+      ]
+    },
+    "experiences": [
+      {
+        "id": "smart-informatique",
+        "title": "Stage – Développeur web / Webdesigner",
+        "company": "Smart Informatique",
+        "kind": "stage",
+        "start": "2024",
+        "end": "2024",
+        "summary": "Stage de 8 semaines",
+        "missions": [
+          "Création d’un site internet complet avec le CMS WordPress (installation, configuration, personnalisation du thème)",
+          "Conception de visuels et bannières web avec Canva / Photoshop / Illustrator pour renforcer l’identité visuelle",
+          "Intégration de contenus et optimisation du référencement naturel (SEO)",
+          "Tests de compatibilité et maintenance technique après mise en ligne"
+        ],
+        "techs": [
+          "WordPress",
+          "Webdesign",
+          "Canva",
+          "Photoshop",
+          "Illustrator",
+          "HTML",
+          "CSS"
+        ],
+        "position": 0
+      },
+      {
+        "id": "le-mieuxdisant",
+        "title": "Intégrateur web",
+        "company": "Le MieuxDisant",
+        "kind": "alternance",
+        "start": "2024",
+        "end": "2025",
+        "summary": null,
+        "missions": [],
+        "techs": [],
+        "position": 1
+      },
+      {
+        "id": "freelance",
+        "title": "Développeur et SEO",
+        "company": "Freelance",
+        "kind": "freelance",
+        "start": "2025",
+        "end": "2027",
+        "summary": null,
+        "missions": [],
+        "techs": [],
+        "position": 2
+      },
+      {
+        "id": "octoplus-solutions",
+        "title": "Développeur full-stack junior",
+        "company": "Octoplus Solutions",
+        "kind": "alternance",
+        "start": "2026",
+        "end": "2027",
+        "summary": null,
+        "missions": [],
+        "techs": [],
+        "position": 3
+      }
+    ],
+    "educations": [
+      {
+        "id": "but-mmi",
+        "degree": "BUT MMI",
+        "school": "IUT Dijon-Auxerre",
+        "start": "2022",
+        "end": "2025",
+        "details": [
+          "Développement Web : Conception de sites responsives, maîtrise du HTML/CSS, JavaScript, utilisation de frameworks (React, Laravel).",
+          "Design Graphique & UX/UI : Création d'identités visuelles, prototypage haute fidélité sur Figma/Adobe XD, et maîtrise de la suite Adobe.",
+          "Communication Digitale : Élaboration de stratégies de communication, gestion de réseaux sociaux et rédaction SEO."
+        ],
+        "position": 0
+      },
+      {
+        "id": "bachelor-developpement-web-ia",
+        "degree": "Bachelor Développement web & IA",
+        "school": "CREA Genève",
+        "start": "2025",
+        "end": "2028",
+        "details": [
+          "Programmation & Architecture : Maîtrise de la POO (PHP, Python, Java), des architectures n-tiers.",
+          "Frontend & CMS : Développement d'interfaces dynamiques (JS) et intégration avancée (HTML/CSS). Développement de site web avec un CMS (WordPress).",
+          "Data & Infrastructure : Gestion de bases de données avec SQL. Conteneurisation via Docker et administration système (Linux, Bash, SSH).",
+          "IA & Workflow Technique : Optimisation du code via IA générative et collaboration sous Git/GitHub"
+        ],
+        "position": 1
+      }
+    ],
+    "projectCategories": [
+      {
+        "id": "pro",
+        "title": "Projets pro",
+        "description": "En entreprise et en freelance.",
+        "position": 0
+      },
+      {
+        "id": "ecole",
+        "title": "Projets école",
+        "description": "Réalisés pendant mes études.",
+        "position": 1
+      },
+      {
+        "id": "perso",
+        "title": "Projets perso",
+        "description": "Pour apprendre et expérimenter.",
+        "position": 2
+      }
+    ],
+    "projects": [
+      {
+        "id": "mieuxdisant",
+        "title": "Le MieuxDisant",
+        "categoryId": "pro",
+        "summary": "Site WordPress conçu sur Figma puis développé en alternance.",
+        "context": null,
+        "work": null,
+        "result": null,
+        "techs": [
+          "WordPress",
+          "Figma"
+        ],
+        "links": [
+          {
+            "label": "Site",
+            "href": "https://lemieuxdisant.fr/"
+          }
+        ],
+        "captures": [],
+        "hidden": false,
+        "position": 0
+      },
+      {
+        "id": "mb-ventilation",
+        "title": "MB Ventilation",
+        "categoryId": "pro",
+        "summary": "Site WordPress dédié aux systèmes de ventilation, réalisé en freelance.",
+        "context": null,
+        "work": null,
+        "result": null,
+        "techs": [
+          "WordPress"
+        ],
+        "links": [
+          {
+            "label": "Site",
+            "href": "https://mb-ventilation.fr/"
+          }
+        ],
+        "captures": [],
+        "hidden": false,
+        "position": 1
+      },
+      {
+        "id": "mb-home",
+        "title": "MB Home",
+        "categoryId": "pro",
+        "summary": "Site WordPress dédié au carrelage, au placo et à la démolition, réalisé en freelance.",
+        "context": null,
+        "work": null,
+        "result": null,
+        "techs": [
+          "WordPress"
+        ],
+        "links": [
+          {
+            "label": "Site",
+            "href": "https://mb-home.fr/"
+          }
+        ],
+        "captures": [],
+        "hidden": false,
+        "position": 2
+      },
+      {
+        "id": "compresseur-images",
+        "title": "Compresseur d’images",
+        "categoryId": "pro",
+        "summary": "Application Python qui compresse les photos au format WebP, créée pour faciliter mes missions de freelance.",
+        "context": null,
+        "work": null,
+        "result": null,
+        "techs": [
+          "Python"
+        ],
+        "links": [
+          {
+            "label": "Code",
+            "href": "https://github.com/Matis-Wostry/compresseur-img-python"
+          }
+        ],
+        "captures": [],
+        "hidden": false,
+        "position": 3
+      },
+      {
+        "id": "pokedex",
+        "title": "Pokédex",
+        "categoryId": "ecole",
+        "summary": "Une API REST documentée avec Swagger et une interface React pour chercher et filtrer les Pokémon.",
+        "context": null,
+        "work": null,
+        "result": null,
+        "techs": [
+          "React",
+          "Express",
+          "MongoDB",
+          "Swagger"
+        ],
+        "links": [
+          {
+            "label": "Code",
+            "href": "https://github.com/Matis-Wostry/Pokedex"
+          },
+          {
+            "label": "Démo",
+            "href": "https://pokedex.matis-wostry.com/"
+          }
+        ],
+        "captures": [],
+        "hidden": false,
+        "position": 4
+      },
+      {
+        "id": "meteo",
+        "title": "Application météo",
+        "categoryId": "ecole",
+        "summary": "Prévisions par ville et alertes par email planifiées, en Laravel.",
+        "context": null,
+        "work": null,
+        "result": null,
+        "techs": [
+          "Laravel",
+          "PHP"
+        ],
+        "links": [
+          {
+            "label": "Code",
+            "href": "https://github.com/Matis-Wostry/iut-weather"
+          },
+          {
+            "label": "Démo",
+            "href": "https://iut-weather.matis-wostry.com/"
+          }
+        ],
+        "captures": [],
+        "hidden": false,
+        "position": 5
+      },
+      {
+        "id": "gestion-ecole",
+        "title": "Gestion d’école",
+        "categoryId": "ecole",
+        "summary": "Application Java pour gérer élèves, livres, UV et inscriptions, avec une base MySQL en JDBC et une interface Swing testée.",
+        "context": null,
+        "work": null,
+        "result": null,
+        "techs": [
+          "Java",
+          "MySQL",
+          "JDBC",
+          "Swing",
+          "JUnit"
+        ],
+        "links": [
+          {
+            "label": "Code",
+            "href": "https://github.com/Matis-Wostry/gestionEcole"
+          }
+        ],
+        "captures": [],
+        "hidden": false,
+        "position": 6
+      },
+      {
+        "id": "azteka",
+        "title": "Azteka",
+        "categoryId": "ecole",
+        "summary": "Intégration responsive de la maquette Figma d’une équipe e-sport.",
+        "context": null,
+        "work": null,
+        "result": null,
+        "techs": [
+          "HTML",
+          "CSS",
+          "Figma"
+        ],
+        "links": [
+          {
+            "label": "Code",
+            "href": "https://github.com/Matis-Wostry/integration-maquette"
+          },
+          {
+            "label": "Démo",
+            "href": "https://azteka.matis-wostry.com/"
+          },
+          {
+            "label": "Maquette",
+            "href": "https://www.figma.com/design/fiBO5bsAcP9Ks7A0yzx2kl/Azteka-Esports-Team-%7C-Info-%7C-Ecommerce--Community---copie-?node-id=1-6"
+          }
+        ],
+        "captures": [],
+        "hidden": false,
+        "position": 7
+      },
+      {
+        "id": "veille-mcp",
+        "title": "Veille techno MCP",
+        "categoryId": "ecole",
+        "summary": "Veille technique automatisée : l’actualité GitHub et Dev.to est synthétisée en français par Claude, stockée dans SQLite et exposée par un serveur MCP.",
+        "context": null,
+        "work": null,
+        "result": null,
+        "techs": [
+          "TypeScript",
+          "Claude",
+          "MCP",
+          "SQLite"
+        ],
+        "links": [
+          {
+            "label": "Code",
+            "href": "https://github.com/Matis-Wostry/MCP-Crea"
+          }
+        ],
+        "captures": [],
+        "hidden": false,
+        "position": 8
+      },
+      {
+        "id": "calendrier-php",
+        "title": "Calendrier PHP",
+        "categoryId": "ecole",
+        "summary": "Calendrier dynamique en PHP natif : événements avec images en CRUD, mois mémorisé en session et dimanches désactivés.",
+        "context": null,
+        "work": null,
+        "result": null,
+        "techs": [
+          "PHP",
+          "Tailwind CSS",
+          "JavaScript"
+        ],
+        "links": [
+          {
+            "label": "Code",
+            "href": "https://github.com/Matis-Wostry/calendrier-php"
+          }
+        ],
+        "captures": [],
+        "hidden": false,
+        "position": 9
+      },
+      {
+        "id": "chambre-du-dev",
+        "title": "La Chambre du Dev",
+        "categoryId": "perso",
+        "summary": "Mon portfolio sous forme de jeu : une chambre en pixel art à explorer, avec un moteur d’échecs, des sons synthétisés et un terminal.",
+        "context": null,
+        "work": null,
+        "result": null,
+        "techs": [
+          "Phaser",
+          "JavaScript",
+          "Vite",
+          "PixelArt",
+          "WebAudio"
+        ],
+        "links": [
+          {
+            "label": "Code",
+            "href": "https://github.com/Matis-Wostry/portfolio-pixel"
+          }
+        ],
+        "captures": [],
+        "hidden": false,
+        "position": 10
+      },
+      {
+        "id": "articles-ia",
+        "title": "Articles WordPress",
+        "categoryId": "perso",
+        "summary": "Script Python qui réécrit automatiquement des articles WordPress avec l’API d’OpenAI.",
+        "context": null,
+        "work": null,
+        "result": null,
+        "techs": [
+          "Python",
+          "OpenAI",
+          "API"
+        ],
+        "links": [
+          {
+            "label": "Code",
+            "href": "https://github.com/Matis-Wostry/SEO-article"
+          }
+        ],
+        "captures": [],
+        "hidden": false,
+        "position": 11
+      },
+      {
+        "id": "usage-limits",
+        "title": "Usage Limits",
+        "categoryId": "perso",
+        "summary": "Mod pour Claude Code qui affiche ta consommation des limites (session de 5 h et semaine) avec un verdict de rythme.",
+        "context": null,
+        "work": null,
+        "result": null,
+        "techs": [
+          "TypeScript",
+          "Claude Code"
+        ],
+        "links": [
+          {
+            "label": "Code",
+            "href": "https://github.com/Matis-Wostry/usage-limits"
+          }
+        ],
+        "captures": [],
+        "hidden": false,
+        "position": 12
+      }
+    ],
+    "skillCategories": [
+      {
+        "id": "langages",
+        "title": "Langages",
+        "skills": [
+          "HTML",
+          "CSS",
+          "SCSS",
+          "JavaScript",
+          "TypeScript",
+          "PHP",
+          "Python",
+          "C",
+          "Java"
+        ],
+        "position": 0
+      },
+      {
+        "id": "frameworks-cms",
+        "title": "Frameworks & CMS",
+        "skills": [
+          "React",
+          "Vue.js",
+          "Tailwind CSS",
+          "DaisyUI",
+          "Node.js",
+          "Express",
+          "Laravel",
+          "WordPress",
+          "Phaser"
+        ],
+        "position": 1
+      },
+      {
+        "id": "donnees-api",
+        "title": "Données & API",
+        "skills": [
+          "SQL",
+          "MySQL",
+          "PostgreSQL",
+          "SQLite",
+          "MongoDB",
+          "Supabase",
+          "JDBC",
+          "Drizzle",
+          "API REST",
+          "Swagger",
+          "Postman",
+          "JWT"
+        ],
+        "position": 2
+      },
+      {
+        "id": "devops-outils",
+        "title": "DevOps & outils",
+        "skills": [
+          "Docker",
+          "Docker Compose",
+          "Linux",
+          "WSL",
+          "Git",
+          "GitHub",
+          "GitHub Actions",
+          "Vite",
+          "Vitest",
+          "npm",
+          "VS Code",
+          "Caddy",
+          "SSH / VPS"
+        ],
+        "position": 3
+      },
+      {
+        "id": "design",
+        "title": "Design",
+        "skills": [
+          "Figma",
+          "Photoshop",
+          "Illustrator",
+          "Canva",
+          "Claude Design"
+        ],
+        "position": 4
+      },
+      {
+        "id": "seo-analyse",
+        "title": "SEO & analyse",
+        "skills": [
+          "Google Analytics",
+          "Google Tag Manager",
+          "Search Console",
+          "SEMrush",
+          "SE Ranking",
+          "PageSpeed Insights",
+          "Lighthouse",
+          "Yoast SEO",
+          "Hotjar"
+        ],
+        "position": 5
+      },
+      {
+        "id": "ia",
+        "title": "IA",
+        "skills": [
+          "Claude",
+          "Claude Code",
+          "OpenAI",
+          "Gemini",
+          "GitHub Copilot",
+          "Ollama",
+          "Hugging Face",
+          "n8n"
+        ],
+        "position": 6
+      }
+    ]
+  }
+}
