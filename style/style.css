@@ -1401,8 +1401,66 @@ captures, façons de travailler, compétences en mots-clés.
   border-radius: 8px;
 }
 
-.skill-category .tech-badges {
-  margin-top: 0;
+/* Compétences : une carte par catégorie, en colonnes qui s'emboîtent sans laisser de trous. */
+#skills .skills-grid {
+  display: block;
+  columns: 3 280px;
+  column-gap: 1.5rem;
+}
+
+.skill-card {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: 12px;
+  transition: border-color var(--transition-fast);
+}
+
+.skill-card:hover {
+  border-color: var(--clr-accent);
+}
+
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.skill-card-title {
+  font-size: 1.1rem;
+  color: var(--clr-accent);
+}
+
+.skill-card-count {
+  min-width: 1.75rem;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 20px;
+  background: var(--clr-bg);
+  color: var(--clr-muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.skill-tag {
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 6px;
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  font-size: 0.85rem;
+  line-height: 1.4;
 }
 
 .work-styles {
