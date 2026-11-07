@@ -1401,33 +1401,37 @@ captures, façons de travailler, compétences en mots-clés.
   border-radius: 8px;
 }
 
-/* Compétences : une carte par catégorie, en colonnes qui s'emboîtent sans laisser de trous. */
+/* Compétences : une ligne par catégorie, le nom à gauche et les mots-clés à droite, dans un seul bloc. */
 #skills .skills-grid {
   display: block;
-  columns: 3 280px;
-  column-gap: 1.5rem;
-}
-
-.skill-card {
-  break-inside: avoid;
-  margin-bottom: 1.5rem;
-  padding: 1.25rem 1.5rem;
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
   border-radius: 12px;
-  transition: border-color var(--transition-fast);
+  overflow: hidden;
+}
+
+.skill-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.25rem 1.5rem;
+  transition: background var(--transition-fast);
+}
+
+.skill-card + .skill-card {
+  border-top: 1px solid var(--clr-border);
 }
 
 .skill-card:hover {
-  border-color: var(--clr-accent);
+  background: var(--clr-bg);
 }
 
 .skill-card-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 0.75rem;
+  padding-top: 0.2rem;
 }
 
 .skill-card-title {
@@ -1463,6 +1467,17 @@ captures, façons de travailler, compétences en mots-clés.
   line-height: 1.4;
 }
 
+.skill-card:hover .skill-tag {
+  background: var(--clr-surface);
+}
+
+@media (max-width: 768px) {
+  .skill-card {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+  }
+}
 .work-styles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
