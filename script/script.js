@@ -200,55 +200,64 @@ window.addEventListener('scroll', setActiveLink);
 setActiveLink();
 
 // ============================================
-// CONTACT FORM HANDLING
-// INSTRUCTIONS: Remplacez CONTACT_ENDPOINT par votre URL Formspree/FormSubmit
+// FORMULAIRE DE CONTACT
+// Le message part à l'API de Portfolio Matis, qui me l'envoie par mail sans le garder.
+// En local, il part à l'API lancée sur la machine.
 // ============================================
-const CONTACT_ENDPOINT = 'https://formspree.io/f/xanpzqln'; // <-- Remplacez YOUR_FORM_ID
-// Ou utilisez FormSubmit: 'https://formsubmit.co/your@email.com'
+const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+const CONTACT_ENDPOINT = isLocal ? 'http://localhost:3000/public/contact' : 'https://api.matis-wostry.com/public/contact';
+const CONTACT_EMAIL = 'matiswostry.pro@gmail.com';
 
 const contactForm = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
 
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    
-    // Afficher un état de chargement
-    formStatus.textContent = '⏳ Envoi en cours...';
-    formStatus.className = 'form-status';
+const showStatus = (text, kind = '') => {
+    formStatus.textContent = text;
+    formStatus.className = kind ? `form-status ${kind}` : 'form-status';
     formStatus.style.display = 'block';
-    
-    try {
-        // Option 1: Utiliser fetch avec Formspree/FormSubmit
-        const response = await fetch(CONTACT_ENDPOINT, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-        
-        if (response.ok) {
-            formStatus.textContent = '✅ Message envoyé avec succès !';
-            formStatus.className = 'form-status success';
-            contactForm.reset();
-        } else {
-            throw new Error('Erreur lors de l\'envoi');
+};
+
+// Si le formulaire ne peut pas partir, le message s'ouvre dans la messagerie du visiteur, déjà rempli.
+const openMailClient = (data) => {
+    const subject = encodeURIComponent('Contact depuis votre CV');
+    const body = encodeURIComponent(`Nom: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`);
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+};
+
+if (contactForm && formStatus) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(contactForm));
+        const button = contactForm.querySelector('button[type="submit"]');
+        showStatus('⏳ Envoi en cours...');
+        button.disabled = true;
+
+        try {
+            const response = await fetch(CONTACT_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+            const result = await response.json().catch(() => ({}));
+
+            if (response.ok) {
+                showStatus('✅ Message envoyé ! Je vous réponds au plus vite.', 'success');
+                contactForm.reset();
+            } else if (response.status === 400 || response.status === 429) {
+                // Un champ à corriger, ou trop d'envois : le visiteur peut agir, on lui dit quoi.
+                const details = (result.issues || []).map((issue) => issue.message).join(', ');
+                showStatus(`⚠️ ${result.message || 'Message refusé'}${details ? ` : ${details}` : ''}`, 'error');
+            } else {
+                throw new Error(result.message || `Erreur ${response.status}`);
+            }
+        } catch (error) {
+            showStatus(`⚠️ Le formulaire est indisponible. Votre messagerie va s'ouvrir avec votre message, à envoyer à ${CONTACT_EMAIL}.`, 'error');
+            setTimeout(() => openMailClient(data), 2500);
+        } finally {
+            button.disabled = false;
         }
-    } catch (error) {
-        // Fallback: utiliser mailto si le service externe échoue
-        formStatus.textContent = '⚠️ Service indisponible. Redirection vers votre client email...';
-        formStatus.className = 'form-status error';
-        
-        setTimeout(() => {
-            const subject = encodeURIComponent('Contact depuis votre CV');
-            const body = encodeURIComponent(`Nom: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`);
-            window.location.href = `mailto:matiswostry.pro@gmail.com?subject=${subject}&body=${body}`;
-        }, 2000);
-    }
-});
+    });
+}
 
 // ============================================
 // SMOOTH SCROLL POLYFILL (pour anciens navigateurs)
