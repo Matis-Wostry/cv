@@ -82,7 +82,7 @@ Secrets GitHub attendus :
 Matis Wostry
 
 - Site : https://matis-wostry.com/
-- Mes dépôts Git : https://git.matis-wostry.com
+- Mes dépôts Git : https://git.matis-wostry.com/matis
 - LinkedIn : https://linkedin.com/in/matis-wostry
 
 <!-- test auto-deploy 2026-09-20T15:19:55Z -->
