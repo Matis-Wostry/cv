@@ -1,0 +1,7 @@
+# Résultat du build, envoyé sur le serveur
+dist/
+# Générateur récupéré par le workflow
+.portfolio-matis/
+# Captures des projets, copiées depuis l'API à chaque build
+assets/media/
+node_modules/

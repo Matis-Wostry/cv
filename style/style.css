@@ -1344,3 +1344,276 @@ body.pdf-generating * {
   box-shadow: none !important;
   text-shadow: none !important;
 }
+/* ============================================
+CONTENU GÉNÉRÉ DEPUIS PORTFOLIO MATIS
+Ajouts seulement : catégories de projets, détail d'un projet,
+captures, façons de travailler, compétences en mots-clés.
+============================================ */
+.project-category + .project-category {
+  margin-top: var(--spacing-lg);
+}
+
+.project-category-title {
+  font-size: 1.5rem;
+  color: var(--clr-accent);
+  margin-bottom: 0.25rem;
+}
+
+.project-category-description {
+  color: var(--clr-muted);
+  margin-bottom: 1.5rem;
+}
+
+.project-details {
+  margin-bottom: 1rem;
+  color: var(--clr-muted);
+}
+
+.project-details summary {
+  cursor: pointer;
+  color: var(--clr-accent);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.project-details p {
+  margin-bottom: 0.75rem;
+}
+
+.project-details .project-detail-label {
+  color: var(--clr-text);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.project-captures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-captures img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--clr-border);
+  border-radius: 8px;
+}
+
+/* Compétences : une ligne par catégorie, le nom à gauche et les mots-clés à droite, dans un seul bloc. */
+#skills .skills-grid {
+  display: block;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.skill-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.25rem 1.5rem;
+  transition: background var(--transition-fast);
+}
+
+.skill-card + .skill-card {
+  border-top: 1px solid var(--clr-border);
+}
+
+.skill-card:hover {
+  background: var(--clr-bg);
+}
+
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 0.2rem;
+}
+
+.skill-card-title {
+  font-size: 1.1rem;
+  color: var(--clr-accent);
+}
+
+.skill-card-count {
+  min-width: 1.75rem;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 20px;
+  background: var(--clr-bg);
+  color: var(--clr-muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.skill-tag {
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 6px;
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.skill-card:hover .skill-tag {
+  background: var(--clr-surface);
+}
+
+@media (max-width: 768px) {
+  .skill-card {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+  }
+}
+.work-styles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: var(--spacing-md);
+}
+
+.work-style {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.work-style-quality {
+  font-weight: 700;
+  color: var(--clr-accent);
+  margin-bottom: 0.25rem;
+}
+
+.work-style-proof {
+  color: var(--clr-muted);
+}
+/* Onglets des projets : affichés seulement quand le script les a activés. */
+.project-tabs {
+  display: none;
+}
+
+.project-browser.is-tabbed .project-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.project-browser.is-tabbed .project-category + .project-category {
+  margin-top: 0;
+}
+
+.project-browser.is-tabbed .project-category-title {
+  display: none;
+}
+
+.project-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--clr-surface);
+  color: var(--clr-text);
+  border: 1px solid var(--clr-border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.project-tab:hover {
+  border-color: var(--clr-accent);
+}
+
+.project-tab:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 2px;
+}
+
+.project-tab[aria-selected="true"] {
+  background: var(--clr-accent);
+  border-color: var(--clr-accent);
+  color: #fff;
+}
+
+.project-tab-count {
+  padding: 0 0.5rem;
+  border-radius: 20px;
+  background: var(--clr-bg);
+  color: var(--clr-muted);
+  font-size: 0.85rem;
+}
+
+.project-tab[aria-selected="true"] .project-tab-count {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.project-category.slide-next {
+  animation: project-slide-next 320ms ease-out;
+}
+
+.project-category.slide-previous {
+  animation: project-slide-previous 320ms ease-out;
+}
+
+@keyframes project-slide-next {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes project-slide-previous {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Sur téléphone, les onglets se partagent la largeur : tous restent visibles. */
+@media (max-width: 768px) {
+  .project-browser.is-tabbed .project-tabs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .project-tab {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.6rem 0.5rem;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
+
+/* Le CV en PDF généré depuis la page montre toutes les catégories. */
+body.pdf-generating .project-category[hidden] {
+  display: block;
+}

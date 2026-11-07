@@ -278,3 +278,54 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // 2. Dans la boîte de dialogue d'impression, choisissez "Enregistrer au format PDF"
 // 3. Ajustez les marges si nécessaire
 // Le style @media print est déjà optimisé pour l'impression A4
+
+// ============================================
+// ONGLETS DES PROJETS (une catégorie à la fois)
+// Le HTML contient toutes les catégories : sans ce script, elles restent les unes sous les autres.
+// ============================================
+document.querySelectorAll('[data-project-tabs]').forEach((browser) => {
+    const tabs = [...browser.querySelectorAll('[role="tab"]')];
+    const panels = tabs.map((tab) => document.getElementById(tab.getAttribute('aria-controls')));
+    if (tabs.length === 0 || panels.some((panel) => !panel)) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let current = -1;
+
+    // Au clavier, le sens suit la flèche, même quand on repasse du dernier onglet au premier.
+    const select = (index, focus = false, direction = index > current ? 'next' : 'previous') => {
+        if (index === current) return;
+        tabs.forEach((tab, i) => {
+            const active = i === index;
+            tab.setAttribute('aria-selected', String(active));
+            tab.tabIndex = active ? 0 : -1;
+            panels[i].hidden = !active;
+            panels[i].classList.remove('slide-next', 'slide-previous');
+        });
+        // Glisse depuis la droite ou la gauche selon le sens, sauf au chargement ou si l'animation est réduite.
+        if (current !== -1 && !reduceMotion.matches) {
+            void panels[index].offsetWidth;
+            panels[index].classList.add(`slide-${direction}`);
+        }
+        current = index;
+        if (focus) tabs[index].focus();
+    };
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => select(index));
+        tab.addEventListener('keydown', (event) => {
+            const last = tabs.length - 1;
+            const target = {
+                ArrowRight: current === last ? 0 : current + 1,
+                ArrowLeft: current === 0 ? last : current - 1,
+                Home: 0,
+                End: last,
+            }[event.key];
+            if (target === undefined) return;
+            event.preventDefault();
+            select(target, true, event.key === 'ArrowLeft' || event.key === 'Home' ? 'previous' : 'next');
+        });
+    });
+
+    browser.classList.add('is-tabbed');
+    select(0);
+});

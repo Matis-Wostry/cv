@@ -3,6 +3,16 @@ name: Deploy CV website
 on:
   push:
     branches: ["main"]
+  # Lancé aussi par le bouton Publier de Portfolio Matis.
+  workflow_dispatch:
+
+# Deux déploiements ne se croisent jamais : le second attend la fin du premier.
+concurrency:
+  group: deploy-site
+  cancel-in-progress: false
+
+permissions:
+  contents: write
 
 jobs:
   deploy:
@@ -11,6 +21,30 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Récupère le générateur de Portfolio Matis
+        uses: actions/checkout@v4
+        with:
+          repository: Matis-Wostry/portfolio-matis
+          path: .portfolio-matis
+
+      - name: Installe pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          package_json_file: .portfolio-matis/package.json
+
+      - name: Installe Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Installe le générateur
+        working-directory: .portfolio-matis
+        run: pnpm install --frozen-lockfile --filter "@portfolio-matis/site-classique..."
+
+      # Si l'API est injoignable ou le contenu invalide, le workflow s'arrête ici : le site en ligne ne bouge pas.
+      - name: Génère le site depuis le contenu publié
+        run: node .portfolio-matis/packages/site-classique/src/cli.ts --site "$GITHUB_WORKSPACE" --api https://api.matis-wostry.com --out "$GITHUB_WORKSPACE/dist"
 
       - name: Setup SSH agent
         uses: webfactory/ssh-agent@v0.9.0
@@ -22,9 +56,22 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
 
+      # Seul le résultat du build part : --delete retire du serveur .git, .github et README.md.
       - name: Upload website via rsync
-        run: rsync -az --delete -e "ssh -p ${{ secrets.SSH_PORT }}" ./ ${{ secrets.SSH_TARGET }}
+        run: rsync -az --delete -e "ssh -p ${{ secrets.SSH_PORT }}" ./dist/ ${{ secrets.SSH_TARGET }}
 
       - name: Reload Caddy
         run: ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_LOGIN }} "docker exec caddy caddy reload --config /etc/caddy/Caddyfile"
 
+      - name: Garde le contenu publié dans le dépôt
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html content/snapshot.json
+          if git diff --cached --quiet; then
+            echo "Contenu inchangé"
+            exit 0
+          fi
+          git commit -m "Met à jour le contenu publié [skip ci]"
+          git pull --rebase
+          git push
